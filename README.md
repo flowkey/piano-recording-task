@@ -8,7 +8,8 @@ Build a small piano application that can play sounds, as well as store and retri
 
 - Use React for the Frontend
 - Use GraphQL for communication with the server
-- A starting point for the GraphQL server is given in the [Apollo Server](#apollo-server)
+- A starting point for the GraphQL server is given below with the [Apollo Server](#apollo-server)
+- You can use the given [Piano Sounds](#piano-sounds) files or any of your choice
 
 ### Minimum requirements
 
@@ -23,6 +24,37 @@ Build a small piano application that can play sounds, as well as store and retri
 - Visual feedback on touching the keys
 - Correct piano tone scales
 - Replaying stored songs
+
+## Apollo Server
+
+The `apollo-server` directory contains a sample GraphQL server implementation using [Apollo](https://www.apollographql.com/).
+
+### Run the server
+- `cd apollo-server` and `npm install`
+- `npm start`
+
+### Run sample queries:
+Start the server & access the [GraphQL Playground IDE](https://github.com/prismagraphql/graphql-playground), e.g. on `localhost:4000`.
+
+To query songs:
+```
+query {
+    songs {
+        id
+        title
+        keysPlayed
+    }
+}
+```
+To add a song:
+```
+mutation {
+    addSong(title: "Some new song", keysPlayed: ["D", "E", "F"]) {
+        title
+        keysPlayed
+    }
+}
+```
 
 ## Piano Sounds
 
