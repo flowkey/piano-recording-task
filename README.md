@@ -6,6 +6,7 @@ Build a small piano application that can play sounds, as well as store and retri
 
 ### Implementation instructions
 
+- Focus on **clean, readable Code** and **Simplicity**
 - Use React for the Frontend
 - Use GraphQL for communication with the server
 - A starting point for the GraphQL server is given below with the [Apollo Server](#apollo-server)
