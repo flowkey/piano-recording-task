@@ -1,6 +1,6 @@
 # React Piano Task
 
-Build a small piano application that can play sounds, as well as store and retrieve sequences of played keys.
+Build a small piano application that can play sounds, as well as store and retrieve sequences of played keys (songs).
 
 *If anything here is unclear or any questions come to your mind, don’t hesitate to contact us - we’re here for you!*
 
@@ -8,21 +8,21 @@ Build a small piano application that can play sounds, as well as store and retri
 
 - Focus on **clean, readable Code** and **Simplicity**
 - Use **React** for the Frontend
-- You can use the given [Piano Sounds](#piano-sounds) files or any of your choice
+- For the piano sounds you can use the [given files](#piano-sounds) files or any of your choice
 
 ## Minimum requirements
 
-- Piano:
+- Piano UI:
     - Clickable black and white keys, which play a sound when clicked
     - Visual feedback on touching the keys
-- Store song (sequence of keys):
+- Song storage & playback functionality:
     - Show buttons to start/stop recording a sequence of keys
     - Enable defining a song title
     - Show a list of stored songs with title
+    - Enable replaying stored songs
 
 ## Optional features
 
-- Enable replaying stored songs
 - Store and retrieve the songs from a **GraphQL** server instead of from a local storage (sample server given here: [Apollo Server](apollo-server))
 
 ## Piano Sounds
