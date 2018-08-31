@@ -23,6 +23,7 @@ Build a small piano application that can play sounds, as well as store and retri
 
 ## Optional features
 
+- Enable **correct timing** of played keys for recording & playing songs
 - Store and retrieve the songs from a **GraphQL** server instead of from a local storage (sample server given here: [Apollo Server](apollo-server))
 
 ## Piano Sounds
