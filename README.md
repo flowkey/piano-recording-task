@@ -16,10 +16,10 @@ Build a small piano application that can play sounds, as well as store and retri
     - Clickable black and white keys, which play a sound when clicked
     - Visual feedback on touching the keys
 - Song storage & playback functionality:
-    - Show buttons to start/stop recording a sequence of keys
-    - Enable defining a song title
+    - Provide a button to start/stop recording a sequence of keys played on the Piano UI
+    - Define a song title when storing a song on stop recording
     - Show a list of stored songs with title
-    - Enable replaying stored songs
+    - Enable replaying stored songs with a small play button next to the title
 
 ## Optional features
 
