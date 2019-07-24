@@ -4,13 +4,14 @@
   "description": "Apollo server for the react piano",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^2.0.0-rc.5",
-    "graphql": "^0.13.2"
+    "graphql": "^0.13.2",
+    "mongodb": "^3.3.0-beta2"
   }
 }

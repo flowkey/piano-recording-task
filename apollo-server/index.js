@@ -1,18 +1,11 @@
-const { ApolloServer, gql } = require('apollo-server');
-
-const songs = [
-    {
-        id: 1,
-        title: 'Some song title',
-        keysPlayed: [ 'C', 'D', 'E'],
-    }
-];
+const { ApolloServer, gql } = require("apollo-server");
+const getMongoConnection = require("./getMongoConnection");
 
 const typeDefs = gql`
     type Song {
-        id: ID!
+        _id: ID!
         title: String
-        keysPlayed: [String]
+        keyStrokes: [String]
     }
 
     type Query {
@@ -20,24 +13,27 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addSong(title: String, keysPlayed: [String]): Song
+        addSong(title: String, keyStrokes: [String]): Song
     }
 `
 
 const resolvers = {
     Query: {
-        songs: () => songs,
+        songs: async () => {
+            const mongodb = await getMongoConnection();
+            return mongodb.collection("songs").find({}).toArray();
+        },
     },
     Mutation: {
-        addSong: (_, { title, keysPlayed }) => {
-            const newSong = { 
-                id: songs.length + 1,
-                title,
-                keysPlayed,
-            };
-            songs.push(newSong);
-
-            return newSong;
+        addSong: async (_, { title, keyStrokes }) => {
+            const mongodb = await getMongoConnection();
+            try {
+                const response = await mongodb.collection("songs").insertOne({ title, keyStrokes });
+                return mongodb.collection("songs").findOne({ _id: response.insertedId });
+            } catch (e) {
+                console.error(e);
+                throw(e);
+            }
         }
     }
 }
