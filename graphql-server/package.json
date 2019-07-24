@@ -1,7 +1,7 @@
 {
-  "name": "react-piano-apollo-server",
+  "name": "react-piano-server",
   "version": "1.0.0",
-  "description": "Apollo server for the react piano",
+  "description": "GraphQL server for the React piano-app",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",

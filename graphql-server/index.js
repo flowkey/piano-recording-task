@@ -41,5 +41,5 @@ const resolvers = {
 const server = new ApolloServer({ typeDefs, resolvers });
 
 server.listen().then(({ url }) => {
-    console.log(`Apollo server running: ${url}`);
+    console.log(`GraphQL server running: ${url}`);
 });
