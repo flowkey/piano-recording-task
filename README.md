@@ -16,6 +16,11 @@ Please push a clone (not a fork!) of this codebase to your Github/Gitlab account
 - Show a list of stored songs with title
 - Enable replaying stored songs with a small play button next to the title (with correct timing of replayed keys!)
 
+Here a very simple example of what the UI could look like:
+<img width="540" alt="image" src="https://user-images.githubusercontent.com/10008938/61811943-db30e500-ae42-11e9-94ec-ec0172bb42e2.png">
+
+*IMPORTANT: It does not have to look like this, that's just an example!*
+
 ### Implementation requirements
 - Focus on **clean, readable code** and **simplicity**
 - Use the `graphql-server` to store and retrieve songs (here more info on [Queries](https://www.apollographql.com/docs/react/essentials/queries/) & [Mutations](https://www.apollographql.com/docs/react/essentials/mutations/))
