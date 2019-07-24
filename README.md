@@ -1,31 +1,32 @@
 # React Piano Task
 
-Build a small piano application that can play sounds, as well as store and retrieve sequences of played keys (songs).
+This repository contains the instruction and codebase for an interview task at [flowkey](https://www.flowkey.com).
 
 *If anything here is unclear or any questions come to your mind, don’t hesitate to contact us - we’re here for you!*
 
-## Implementation instructions
+## Instruction
 
-- Focus on **clean, readable Code** and **Simplicity**
-- Use **React** for the Frontend
-- For the piano sounds you can use the [given files](#piano-sounds) files or any of your choice
+Please push a clone (not a fork!) of this codebase to your Github/Gitlab account and add a Pull Request implementing the following functionality:
 
-## Minimum requirements
+**Enable the user of the app to record and replay a sequence of played keys as a "Song".**
 
-- Piano UI:
-    - Clickable black and white keys, which play a sound when clicked
-    - Visual feedback on touching the keys
-- Song storage & playback functionality:
-    - Provide a button to start/stop recording a sequence of keys played on the Piano UI
-    - Define a song title when storing a song on stop recording
-    - Show a list of stored songs with title
-    - Enable replaying stored songs with a small play button next to the title
+### Product requirements
+- Provide a button to start/stop recording a sequence of keys played on the Piano UI
+- Define a song title when storing a song on stop recording
+- Show a list of stored songs with title
+- Enable replaying stored songs with a small play button next to the title (with correct timing of replayed keys!)
 
-## Optional features
+### Implementation requirements
+- Focus on **clean, readable code** and **simplicity**
+- Use the `graphql-server` to store and retrieve songs (here more info on [Queries](https://www.apollographql.com/docs/react/essentials/queries/) & [Mutations](https://www.apollographql.com/docs/react/essentials/mutations/))
 
-- Enable **correct timing** of played keys for recording & playing songs
-- Store and retrieve the songs from a **GraphQL** server instead of from a local storage (sample server given here: [Apollo Server](apollo-server))
+### Provided Codebase
 
-## Piano Sounds
+The codebase consists of:
+- a minimal React `piano-app` based on the [react-piano](https://github.com/kevinsqi/react-piano) package
+- a `graphql-server` based on [Apollo](https://www.apollographql.com/)
 
-The directory `grand-piano-mp3-sounds` contains sample sounds you can use for this task. Alternatively you can use sounds from `https://github.com/pffy/mp3-piano-sound` or other sample sounds of your preference.
+How to run it:
+1. Make sure you have a mongodb running on port 27017 (`mongod` in the terminal)
+2. Run `npm install` && `npm start` in `graphql-server`
+2. Run `npm install` && `npm start` in `piano-app`
