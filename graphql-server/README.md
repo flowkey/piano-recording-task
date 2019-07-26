@@ -1,9 +1,9 @@
-# Apollo Server
+# graphql-server
 
-This is a sample server implementation to store/retrieve songs using [GraphQL](https://graphql.org/) with [Apollo](https://www.apollographql.com/).
+This is a simple server implementation to store/retrieve songs using [GraphQL](https://graphql.org/) with [Apollo](https://www.apollographql.com/).
 
 ## Run the server
-- `cd apollo-server` and `npm install`
+- `npm install`
 - `npm start`
 
 ## Run sample queries
@@ -13,18 +13,19 @@ To query songs:
 ```
 query {
     songs {
-        id
+        _id
         title
-        keysPlayed
+        keyStrokes
     }
 }
 ```
 To add a song:
 ```
 mutation {
-    addSong(title: "Some new song", keysPlayed: ["D", "E", "F"]) {
+    addSong(title: "Some new song", keyStrokes: ["D", "E", "F"]) {
+        _id
         title
-        keysPlayed
+        keyStrokes
     }
 }
 ```
