@@ -4,7 +4,8 @@ This is a minimal piano-app based on [Create React App](https://github.com/faceb
 
 ## How to run
 
-`npm install` && `npm start`
+- `npm install`
+- `npm start`
 
 ## React Apollo
 
