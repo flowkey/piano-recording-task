@@ -1,5 +1,9 @@
 const { ApolloServer, gql } = require("apollo-server");
+const { MongoMemoryServer } = require("mongodb-memory-server");
 const getMongoConnection = require("./getMongoConnection");
+
+// don't require a seperate mongodb instance to run
+new MongoMemoryServer({ instance: { port: 27017 } });
 
 const typeDefs = gql`
     type Song {
