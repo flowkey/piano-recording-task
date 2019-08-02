@@ -4,7 +4,9 @@
   "description": "GraphQL server for the React piano-app",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "eslint": "eslint src",
+    "eslint-fix": "eslint --fix src",
+    "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,7 +17,11 @@
     "mongodb": "^3.3.0-beta2"
   },
   "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "mongodb-memory-server": "^5.1.9",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "prettier": "1.18.2"
   }
 }

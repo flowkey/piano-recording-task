@@ -19,13 +19,16 @@ const typeDefs = gql`
     type Mutation {
         addSong(title: String, keyStrokes: [String]): Song
     }
-`
+`;
 
 const resolvers = {
     Query: {
         songs: async () => {
             const mongodb = await getMongoConnection();
-            return mongodb.collection("songs").find({}).toArray();
+            return mongodb
+                .collection("songs")
+                .find({})
+                .toArray();
         },
     },
     Mutation: {
@@ -36,11 +39,11 @@ const resolvers = {
                 return mongodb.collection("songs").findOne({ _id: response.insertedId });
             } catch (e) {
                 console.error(e);
-                throw(e);
+                throw e;
             }
-        }
-    }
-}
+        },
+    },
+};
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
