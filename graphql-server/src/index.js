@@ -35,13 +35,10 @@ const resolvers = {
     Mutation: {
         addSong: async (_, { title, keyStrokes }) => {
             const mongodb = await getMongoConnection();
-            try {
-                const response = await mongodb.collection("songs").insertOne({ title, keyStrokes });
-                return mongodb.collection("songs").findOne({ _id: response.insertedId });
-            } catch (e) {
-                console.error(e);
-                throw e;
-            }
+            const newSong = { title, keyStrokes };
+            const response = await mongodb.collection("songs").insertOne(newSong);
+
+            return { ...newSong, _id: response.insertedId };
         },
     },
 };
