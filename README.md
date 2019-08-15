@@ -6,8 +6,7 @@ This repository contains the instruction and codebase for an interview task at [
 
 ## Task Instruction
 
-1. Please copy this codebase to your Github/Gitlab account using [Github Importer](https://help.github.com/en/articles/importing-a-repository-with-github-importer) / [Gitlab Importer](https://docs.gitlab.com/ee/user/project/import/repo_by_url.html) or by cloning it (don't create a fork!). Your copy of this repository can either be public repository with a different name or a private one which you will share with your interviewer.
-
+1. Please copy this codebase to a private repo on your Github account by using [Github Importer](https://help.github.com/en/articles/importing-a-repository-with-github-importer) or by cloning it (don't create a fork!).
 
 2. Add a Pull Request (to merge your changes to `master` of your copy, not this repository!) implementing the following functionality:
 **Enable the user of the app to record a sequence of keys played on the Piano UI as a "Song" and replay it.**
