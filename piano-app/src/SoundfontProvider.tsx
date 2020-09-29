@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Soundfont from "soundfont-player";
 import { NoteFunction } from "react-piano";
 
@@ -7,7 +6,6 @@ type Unwrapped<T> = T extends Promise<infer U> ? U : T;
 
 interface SoundfontProviderProps {
     audioContext: AudioContext;
-    instrumentName: Soundfont.InstrumentName;
     render: ({
         isLoading,
         playNote,
@@ -20,9 +18,10 @@ interface SoundfontProviderProps {
         stopAllNotes: () => void;
     }) => React.ReactNode;
 
-    format: string;
-    soundfont: string;
     hostname: string;
+    format: "mp3" | "ogg";
+    soundfont: "MusyngKite" | "FluidR3_GM";
+    instrumentName: Soundfont.InstrumentName;
 }
 
 interface SoundfontProviderState {
@@ -31,15 +30,6 @@ interface SoundfontProviderState {
 }
 
 class SoundfontProvider extends React.Component<SoundfontProviderProps, SoundfontProviderState> {
-    static propTypes = {
-        instrumentName: PropTypes.string.isRequired,
-        hostname: PropTypes.string.isRequired,
-        format: PropTypes.oneOf(["mp3", "ogg"]),
-        soundfont: PropTypes.oneOf(["MusyngKite", "FluidR3_GM"]),
-        audioContext: PropTypes.instanceOf(window.AudioContext),
-        render: PropTypes.func,
-    };
-
     static defaultProps = {
         format: "mp3",
         soundfont: "MusyngKite",
