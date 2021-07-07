@@ -9,8 +9,8 @@ This repository contains the instruction and codebase for an interview task at [
 1. Please copy this codebase to a private repo on your Github account by using [Github Importer](https://help.github.com/en/articles/importing-a-repository-with-github-importer) or by cloning it (don't create a fork!).
 
 2. Add a Pull Request (to merge your changes to `master` of your copy, not this repository!) implementing the following functionality:
-**Enable the user of the app to record a sequence of keys played on the Piano UI as a "Song" and replay it.**
-Please make sure the PR has clear description explaining the change. You can add screenshots for the reviewer to get a better first impression of the UI.
+**Enable the user of the app to record a sequence of keys played on the Piano UI as a "Song" and replay it.**<br>
+*Please make sure the PR has a clear description explaining the change. You can add screenshots for the reviewer to get a better first impression of the UI.*
 
 ### Implementation guidelines
 - Focus on **clean, readable code** and **simplicity**
