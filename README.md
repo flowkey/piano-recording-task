@@ -10,6 +10,7 @@ This repository contains the instruction and codebase for an interview task at [
 
 2. Add a Pull Request (to merge your changes to `master` of your copy, not this repository!) implementing the following functionality:
 **Enable the user of the app to record a sequence of keys played on the Piano UI as a "Song" and replay it.**
+Please make sure the PR has clear description explaining the change. You can add screenshots for the reviewer to get a better first impression of the UI.
 
 ### Implementation guidelines
 - Focus on **clean, readable code** and **simplicity**
