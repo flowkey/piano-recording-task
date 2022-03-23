@@ -9,7 +9,7 @@ const mongod = new MongoMemoryServer();
 const mongodb = mongod
     .getPort()
     .then((port) =>
-        MongoClient.connect(`mongodb://localhost:${port}`, {
+        MongoClient.connect(`mongodb://0.0.0.0:${port}`, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         })
