@@ -7,13 +7,8 @@ const mongod = new MongoMemoryServer();
 
 // Connect to the local mock MongoDB server:
 const mongodb = mongod
-    .getPort()
-    .then((port) =>
-        MongoClient.connect(`mongodb://0.0.0.0:${port}`, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        })
-    )
+    .start()
+    .then(() => MongoClient.connect(mongod.getUri()))
     .then((connection) => connection.db("graphql"))
     .catch((error) => {
         console.error("Could not connect to MongoDB");
@@ -25,7 +20,8 @@ const mongodb = mongod
 const typeDefs = gql`
     type Song {
         _id: ID!
-        title: String
+        title: String!
+        # Careful with nullability!
         keyStrokes: [String]
     }
 
