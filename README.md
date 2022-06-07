@@ -14,7 +14,7 @@ This repository contains the instruction and codebase for an interview task at [
 
 ### Implementation guidelines
 - Focus on **clean, readable code** and **simplicity**
-- Use the [graphql-server](graphql-server) to store and retrieve songs (here the docs for client-side [Queries](https://www.apollographql.com/docs/react/essentials/queries/) & [Mutations](https://www.apollographql.com/docs/react/essentials/mutations/))
+- Use the [server](server) to store and retrieve songs (here the docs for client-side [Queries](https://www.apollographql.com/docs/react/essentials/queries/) & [Mutations](https://www.apollographql.com/docs/react/essentials/mutations/))
 - Continue to use `npm` as package manager, don't switch to `yarn`
 
 ### Product requirements
@@ -31,7 +31,7 @@ Here a very simple example of what the UI could look like:
 ## Provided Codebase
 
 The codebase consists of:
-- a minimal React [piano-app](piano-app) based on the [react-piano](https://github.com/kevinsqi/react-piano) package
-- a [graphql-server](graphql-server) based on [Apollo](https://www.apollographql.com/)
+- a minimal React [client](client) based on the [react-piano](https://github.com/kevinsqi/react-piano) package
+- a [server](server) based on [Apollo](https://www.apollographql.com/)
 
 Basic infos and how to run instructions for both parts can be found in the according READMEs in each directory.
