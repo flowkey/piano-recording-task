@@ -4,16 +4,17 @@ This repository contains the instruction and codebase for an interview task at [
 
 *If anything here is unclear or any questions come to your mind, don’t hesitate to contact us - we’re here to help you!*
 
-## Task Instruction
+## Task Instructions
 
 1. Please copy this codebase to a private repo on your Github account by clicking [Use this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) on GitHub, or by cloning it manually (don't create a fork!)
 
 2. Add a Pull Request (to merge your changes to `main` of your copy, not this repository!) implementing the following functionality:
-**Enable the user of the app to record a sequence of keys played on the Piano UI as a "Song" and replay it.**<br>
-*Please make sure the PR has a clear description explaining the change. You can add screenshots for the reviewer to get a better first impression of the UI.*
+**Allow users of the app to record a sequence of keys played on the Piano UI as a "Song" and replay it.**<br>
+*Please ensure the PR has a clear description explaining the change. You can add screenshots for the reviewer to get a better first impression of the UI.*
 
 ### Implementation guidelines
 - Focus on **clean, readable code** and **simplicity**
+- The review will focus on the structure of the React code, and the recording/playback solution you use (storing the recordings in an appropriate data structure will help a lot).
 - Use the [server](server) to store and retrieve songs (here the docs for client-side [Queries](https://www.apollographql.com/docs/react/essentials/queries/) & [Mutations](https://www.apollographql.com/docs/react/essentials/mutations/))
 - Continue to use `npm` as package manager, don't switch to `yarn`
 
