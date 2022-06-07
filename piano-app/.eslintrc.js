@@ -6,8 +6,12 @@ module.exports = {
     rules: {
         "prettier/prettier": "error",
         "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/no-unused-vars": "off",
-        "@typescript-eslint/no-unused-vars-experimental": "error",
+        "@typescript-eslint/no-unused-vars": "error",
+    },
+    settings: {
+        react: {
+            version: "detect",
+        },
     },
     extends: [
         "prettier",
@@ -15,6 +19,5 @@ module.exports = {
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
-        "prettier/@typescript-eslint",
     ],
 };
