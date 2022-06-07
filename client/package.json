@@ -1,5 +1,5 @@
 {
-    "name": "piano-app",
+    "name": "piano-app-client",
     "version": "0.1.0",
     "private": true,
     "devDependencies": {

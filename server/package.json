@@ -1,6 +1,7 @@
 {
-    "name": "react-piano-server",
+    "name": "piano-task-server",
     "version": "1.0.0",
+    "private": true,
     "description": "GraphQL server for the React piano-app",
     "main": "index.js",
     "scripts": {
