@@ -2,7 +2,7 @@
 // If you think they're wrong or something's missing, you're probably right
 
 declare module "react-piano" {
-    export type NoteFunction = (midiNumber: string) => void;
+    export type NoteFunction = (midiNumber: number) => void;
 
     export class MidiNumbers {
         static fromNote: (noteDescription: string) => number;
@@ -30,6 +30,7 @@ declare module "react-piano" {
     }
 
     export const Piano: import("react").FC<{
+        activeNotes?: number[];
         disabled?: boolean;
         noteRange: { first: number; last: number };
         playNote?: NoteFunction;

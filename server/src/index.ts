@@ -1,11 +1,16 @@
-import { ApolloServer, gql } from "apollo-server";
+import gql from "graphql-tag";
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import { MongoClient } from "mongodb";
 
-// Don't require a separate MongoDB instance to run:
-const mongod = new MongoMemoryServer();
+// Don't require a separate MongoDB instance to run
+// Note: contents will be wiped when you stop the server
+const mongod = new MongoMemoryServer({
+    binary: { version: "6.0.0" },
+});
 
-// Connect to the local mock MongoDB server:
+// Connect to the local in-memory MongoDB server:
 const mongodb = mongod
     .start()
     .then(() => MongoClient.connect(mongod.getUri()))
@@ -16,13 +21,13 @@ const mongodb = mongod
         process.exit(1);
     });
 
-// This API is just an example, you can modify any parts if needed for the task:
+// This API is just an example, you can modify any parts if needed for the task
+// Be careful with nullability annotations and what that means for security!
 const typeDefs = gql`
     type Song {
         _id: ID!
         title: String!
-        # Careful with nullability!
-        keyStrokes: [String]
+        keyStrokes: [Int]
     }
 
     type Query {
@@ -30,7 +35,7 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addSong(title: String, keyStrokes: [String]): Song
+        addSong(title: String, keyStrokes: [Int]): Song
     }
 `;
 
@@ -43,7 +48,7 @@ const resolvers = {
     Mutation: {
         addSong: async (
             _: null,
-            { title, keyStrokes }: { title: string; keyStrokes: string[] }
+            { title, keyStrokes }: { title: string; keyStrokes: number[] }
         ) => {
             const newSong = { title, keyStrokes };
             const response = await (await mongodb).collection("songs").insertOne(newSong);
@@ -55,6 +60,6 @@ const resolvers = {
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-server.listen().then(({ url }) => {
+startStandaloneServer(server).then(({ url }) => {
     console.log(`GraphQL server running: ${url}`);
 });
