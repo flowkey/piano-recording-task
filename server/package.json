@@ -1,0 +1,34 @@
+{
+    "name": "piano-task-server",
+    "version": "1.0.0",
+    "private": true,
+    "description": "GraphQL server for the React piano-app",
+    "main": "index.js",
+    "scripts": {
+        "eslint": "eslint --ext .js,.jsx,.ts,.tsx src",
+        "eslint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src",
+        "start": "nodemon src/index.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "flowkey",
+    "license": "ISC",
+    "dependencies": {
+        "@apollo/server": "^4.0.0",
+        "graphql": "^16.5.0",
+        "graphql-tag": "^2.12.6",
+        "mongodb": "^4.7.0"
+    },
+    "devDependencies": {
+        "@types/mongodb": "^4.0.7",
+        "@typescript-eslint/eslint-plugin": "^5.27.1",
+        "@typescript-eslint/parser": "^5.27.1",
+        "eslint": "^8.17.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "mongodb-memory-server": "^8.11.4",
+        "nodemon": "^2.0.16",
+        "prettier": "^2.6.2",
+        "ts-node": "^10.8.1",
+        "typescript": "^4.7.3"
+    }
+}
