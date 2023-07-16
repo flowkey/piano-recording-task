@@ -4,8 +4,6 @@ import Instrument from "./instrument";
 import Piano from "./Piano";
 
 function App({ instrument }: { instrument: Instrument }) {
-    const [lel, setFalse] = useState();
-
     return (
         <div className="App">
             <h1>React Piano Task</h1>

@@ -9,5 +9,15 @@
     <body>
         <div id="root"></div>
         <script type="module" src="/src/index.tsx"></script>
+
+        <script type="text/javascript">
+            // show JS runtime errors within the 'vite-error-overlay'
+            window.onerror = (event, source, lineno, colno, err) => {
+                const ErrorOverlay = customElements.get("vite-error-overlay");
+                if (!ErrorOverlay) { return }
+                const overlay = new ErrorOverlay(err);
+                document.body.appendChild(overlay);
+            };
+        </script>
     </body>
 </html>
