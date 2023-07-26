@@ -7,7 +7,7 @@ import { MongoClient } from "mongodb";
 // Don't require a separate MongoDB instance to run
 // Note: contents will be wiped when you stop the server
 const mongod = new MongoMemoryServer({
-    binary: { version: "6.0.0" },
+    binary: { version: "6.0.8" },
 });
 
 // Connect to the local in-memory MongoDB server:
