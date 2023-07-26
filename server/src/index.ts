@@ -10,8 +10,7 @@ const mongod = new MongoMemoryServer({
     binary: { version: "6.0.8" },
 });
 
-// Connect to the local in-memory MongoDB server:
-const mongodb = mongod
+const mongoClient = mongod
     .start()
     .then(() => MongoClient.connect(mongod.getUri()))
     .then((connection) => connection.db("graphql"))
@@ -27,11 +26,11 @@ const typeDefs = gql`
     type Song {
         _id: ID!
         title: String!
-        keyStrokes: [Int]
+        keyStrokes: [Int!]!
     }
 
     type Query {
-        songs: [Song!]!
+        songs: [Song]
     }
 
     type Mutation {
@@ -39,27 +38,27 @@ const typeDefs = gql`
     }
 `;
 
-const resolvers = {
-    Query: {
-        songs: async () => {
-            return (await mongodb).collection("songs").find({}).toArray();
+type GQLContext = { mongo: Awaited<typeof mongoClient> };
+
+const server = new ApolloServer<GQLContext>({
+    typeDefs,
+    resolvers: {
+        Query: {
+            async songs(rootValue, args, { mongo }) {
+                return [];
+            },
+        },
+        Mutation: {
+            async addSong(rootValue, newSong: { title: string; keyStrokes: number[] }, { mongo }) {
+                const response = await mongo.collection("songs").insertOne(newSong);
+                return { ...newSong, _id: response.insertedId };
+            },
         },
     },
-    Mutation: {
-        addSong: async (
-            _: null,
-            { title, keyStrokes }: { title: string; keyStrokes: number[] }
-        ) => {
-            const newSong = { title, keyStrokes };
-            const response = await (await mongodb).collection("songs").insertOne(newSong);
+});
 
-            return { ...newSong, _id: response.insertedId };
-        },
-    },
-};
-
-const server = new ApolloServer({ typeDefs, resolvers });
-
-startStandaloneServer(server).then(({ url }) => {
-    console.log(`GraphQL server running: ${url}`);
+startStandaloneServer(server, {
+    context: async () => ({ mongo: await mongoClient }),
+}).then(({ url }) => {
+    return console.log(`GraphQL server running: ${url}`);
 });
