@@ -13,6 +13,11 @@ struct ContentView: View {
             Piano(noteRange: 48 ..< 72)
         }
         .padding()
+        .onAppear {
+            Task {
+                print(try await getSongs())
+            }
+        }
     }
 }
 

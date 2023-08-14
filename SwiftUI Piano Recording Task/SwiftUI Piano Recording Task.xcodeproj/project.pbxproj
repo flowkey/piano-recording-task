@@ -37,6 +37,8 @@
 		5C83C0712A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-D#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C83C0592A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-D#4.mp3 */; };
 		5C83C0722A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-B4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C83C05A2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-B4.mp3 */; };
 		5C83C0732A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-F#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C83C05B2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-F#4.mp3 */; };
+		5CEA59732A8A7CEB00C72165 /* GraphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA59722A8A7CEB00C72165 /* GraphQLClient.swift */; };
+		5CEA59752A8A82B900C72165 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA59742A8A82B900C72165 /* Queries.swift */; };
 		61FB08DF2A8A648700ED5E67 /* PianoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FB08DE2A8A648700ED5E67 /* PianoKey.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		5C83C0592A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-D#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "acoustic_grand_piano-mp3-2-D#4.mp3"; sourceTree = "<group>"; };
 		5C83C05A2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-B4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "acoustic_grand_piano-mp3-2-B4.mp3"; sourceTree = "<group>"; };
 		5C83C05B2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-F#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "acoustic_grand_piano-mp3-2-F#4.mp3"; sourceTree = "<group>"; };
+		5CEA59722A8A7CEB00C72165 /* GraphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLClient.swift; sourceTree = "<group>"; };
+		5CEA59742A8A82B900C72165 /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
 		61FB08DE2A8A648700ED5E67 /* PianoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +119,8 @@
 				5C83C0332A7D3BF5002B5E41 /* Assets.xcassets */,
 				5C83C0432A7D4C50002B5E41 /* Sounds */,
 				5C83C0362A7D3BF5002B5E41 /* Preview Content */,
+				5CEA59722A8A7CEB00C72165 /* GraphQLClient.swift */,
+				5CEA59742A8A82B900C72165 /* Queries.swift */,
 			);
 			path = "SwiftUI Piano Recording Task";
 			sourceTree = "<group>";
@@ -252,7 +258,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CEA59732A8A7CEB00C72165 /* GraphQLClient.swift in Sources */,
 				61FB08DF2A8A648700ED5E67 /* PianoKey.swift in Sources */,
+				5CEA59752A8A82B900C72165 /* Queries.swift in Sources */,
 				5C83C0422A7D3D3E002B5E41 /* MusicalNote.swift in Sources */,
 				5C83C0322A7D3BF4002B5E41 /* ContentView.swift in Sources */,
 				5C83C0302A7D3BF4002B5E41 /* SwiftUI_Piano_Recording_TaskApp.swift in Sources */,

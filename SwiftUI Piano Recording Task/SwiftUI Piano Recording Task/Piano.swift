@@ -31,16 +31,23 @@ extension PianoKeyColor {
     }
 }
 
+typealias NoteCallback = ((_ midiNumber: MIDINumber) -> Void)
+
 struct Piano: View {
     private static let KEY_FADEOUT_IN_MS = 450
     
     let notesForWhiteKeys: [MIDINumber]
     let audioPlayers: [MIDINumber: AVAudioPlayer]
     @State var activeKeys: Set<MIDINumber> = []
+
+    var onPlayNote: NoteCallback?
+    var onStopNote: NoteCallback?
     
-    init(noteRange: NoteRange) {
+    init(noteRange: NoteRange, onPlayNote: NoteCallback? = nil, onStopNote: NoteCallback? = nil) {
         notesForWhiteKeys = noteRange.filter { $0.pitchClass.pianoKeyColor == .white }
         self.audioPlayers = noteRange.createAudioPlayers()
+        self.onPlayNote = onPlayNote
+        self.onStopNote = onStopNote
     }
     
     private func playNote(midiNumber: MIDINumber) {
@@ -49,11 +56,13 @@ struct Piano: View {
         player.volume = 1
         player.currentTime = 0
         player.play()
+        onPlayNote?(midiNumber)
     }
     
     private func stopNote(midiNumber: MIDINumber) {
         activeKeys.remove(midiNumber)
         audioPlayers[midiNumber]?.setVolume(0, fadeDuration: Double(Piano.KEY_FADEOUT_IN_MS) / 1000)
+        onStopNote?(midiNumber)
     }
     
     var body: some View {
@@ -63,8 +72,9 @@ struct Piano: View {
                 ForEach(notesForWhiteKeys, id: \.self) { midiNumber in
                     PianoKey(style: .white,
                              isActive: activeKeys.contains(midiNumber),
-                             onKeyDown: {playNote(midiNumber: midiNumber)},
-                             onKeyUp: {stopNote(midiNumber: midiNumber)})
+                             onKeyDown: { playNote(midiNumber: midiNumber) },
+                             onKeyUp: { stopNote(midiNumber: midiNumber) }
+                    )
                 }
             }
             
@@ -79,8 +89,8 @@ struct Piano: View {
                         let midiNumber = midiNumber + 1
                         PianoKey(style: .black,
                                  isActive: activeKeys.contains(midiNumber),
-                                 onKeyDown: {playNote(midiNumber: midiNumber)},
-                                 onKeyUp: {stopNote(midiNumber: midiNumber)}
+                                 onKeyDown: { playNote(midiNumber: midiNumber) },
+                                 onKeyUp: { stopNote(midiNumber: midiNumber) }
                         )
                         .offset(x: xOffset)
                     } else {
