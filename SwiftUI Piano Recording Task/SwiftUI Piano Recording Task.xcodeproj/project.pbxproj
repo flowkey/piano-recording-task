@@ -37,6 +37,7 @@
 		5C83C0712A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-D#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C83C0592A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-D#4.mp3 */; };
 		5C83C0722A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-B4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C83C05A2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-B4.mp3 */; };
 		5C83C0732A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-F#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C83C05B2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-F#4.mp3 */; };
+		61FB08DF2A8A648700ED5E67 /* PianoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FB08DE2A8A648700ED5E67 /* PianoKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		5C83C0592A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-D#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "acoustic_grand_piano-mp3-2-D#4.mp3"; sourceTree = "<group>"; };
 		5C83C05A2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-B4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "acoustic_grand_piano-mp3-2-B4.mp3"; sourceTree = "<group>"; };
 		5C83C05B2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-F#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "acoustic_grand_piano-mp3-2-F#4.mp3"; sourceTree = "<group>"; };
+		61FB08DE2A8A648700ED5E67 /* PianoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				5C83C0312A7D3BF4002B5E41 /* ContentView.swift */,
 				5C83C0412A7D3D3E002B5E41 /* MusicalNote.swift */,
 				5C83C03F2A7D3CA9002B5E41 /* Piano.swift */,
+				61FB08DE2A8A648700ED5E67 /* PianoKey.swift */,
 				5C83C02F2A7D3BF4002B5E41 /* SwiftUI_Piano_Recording_TaskApp.swift */,
 				5C83C0332A7D3BF5002B5E41 /* Assets.xcassets */,
 				5C83C0432A7D4C50002B5E41 /* Sounds */,
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61FB08DF2A8A648700ED5E67 /* PianoKey.swift in Sources */,
 				5C83C0422A7D3D3E002B5E41 /* MusicalNote.swift in Sources */,
 				5C83C0322A7D3BF4002B5E41 /* ContentView.swift in Sources */,
 				5C83C0302A7D3BF4002B5E41 /* SwiftUI_Piano_Recording_TaskApp.swift in Sources */,
