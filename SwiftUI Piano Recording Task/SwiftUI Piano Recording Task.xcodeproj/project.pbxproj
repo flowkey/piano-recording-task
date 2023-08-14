@@ -78,6 +78,7 @@
 		5CEA59722A8A7CEB00C72165 /* GraphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLClient.swift; sourceTree = "<group>"; };
 		5CEA59742A8A82B900C72165 /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
 		61FB08DE2A8A648700ED5E67 /* PianoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoKey.swift; sourceTree = "<group>"; };
+		61FB08E02A8A89F800ED5E67 /* SwiftUI-Piano-Recording-Task-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-Piano-Recording-Task-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +111,7 @@
 		5C83C02E2A7D3BF4002B5E41 /* SwiftUI Piano Recording Task */ = {
 			isa = PBXGroup;
 			children = (
+				61FB08E02A8A89F800ED5E67 /* SwiftUI-Piano-Recording-Task-Info.plist */,
 				5C83C0352A7D3BF5002B5E41 /* SwiftUI_Piano_Recording_Task.entitlements */,
 				5C83C0312A7D3BF4002B5E41 /* ContentView.swift */,
 				5C83C0412A7D3D3E002B5E41 /* MusicalNote.swift */,
@@ -393,6 +395,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-Piano-Recording-Task-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -431,6 +434,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SwiftUI-Piano-Recording-Task-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
