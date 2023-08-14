@@ -82,8 +82,7 @@ struct Piano: View {
             HStack(alignment: .top, spacing: 0) {
                 ForEach(0 ..< notesForWhiteKeys.count, id: \.self) { i in
                     let midiNumber = notesForWhiteKeys[i]
-                    let xOffset: CGFloat =
-                    CGFloat(i) * (PianoKeyColor.white.width - PianoKeyColor.black.width)
+                    let xOffset: CGFloat = CGFloat(i) * (PianoKeyColor.white.width - PianoKeyColor.black.width)
                     + PianoKeyColor.white.width - PianoKeyColor.black.width / 2
                     
                     if midiNumber.pitchClass.precedesBlackKey {
