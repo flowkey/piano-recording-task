@@ -51,7 +51,7 @@ struct Piano: View {
         player.play()
     }
     
-    private func endNote(midiNumber: MIDINumber) {
+    private func stopNote(midiNumber: MIDINumber) {
         activeKeys.remove(midiNumber)
         audioPlayers[midiNumber]?.setVolume(0, fadeDuration: Double(Piano.KEY_FADEOUT_IN_MS) / 1000)
     }
@@ -64,7 +64,7 @@ struct Piano: View {
                     PianoKey(style: .white,
                              isActive: activeKeys.contains(midiNumber),
                              onKeyDown: {playNote(midiNumber: midiNumber)},
-                             onKeyUp: {endNote(midiNumber: midiNumber)})
+                             onKeyUp: {stopNote(midiNumber: midiNumber)})
                 }
             }
             
@@ -80,7 +80,7 @@ struct Piano: View {
                         PianoKey(style: .black,
                                  isActive: activeKeys.contains(midiNumber),
                                  onKeyDown: {playNote(midiNumber: midiNumber)},
-                                 onKeyUp: {endNote(midiNumber: midiNumber)}
+                                 onKeyUp: {stopNote(midiNumber: midiNumber)}
                         )
                         .offset(x: xOffset)
                     } else {
