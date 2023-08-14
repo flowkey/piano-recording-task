@@ -6,7 +6,7 @@ private extension PianoKeyColor {
     }
     
     var activeColor: Color {
-        return self == .black ? Color(red: 0, green: 0.7, blue: 0.7) : Color(red: 0.937254902, green: 0.4901960784, blue: 0)
+        return self == .black ? Color.teal : Color.orange
     }
     
     var borderColor: Color? {
