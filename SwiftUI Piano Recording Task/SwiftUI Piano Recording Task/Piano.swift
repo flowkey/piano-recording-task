@@ -31,11 +31,9 @@ extension PianoKeyColor {
     }
 }
 
-
-
 struct Piano: View {
     private static let KEY_FADEOUT_IN_MS = 450
-
+    
     let notesForWhiteKeys: [MIDINumber]
     let audioPlayers: [MIDINumber: AVAudioPlayer]
     @State var activeKeys: Set<MIDINumber> = []
