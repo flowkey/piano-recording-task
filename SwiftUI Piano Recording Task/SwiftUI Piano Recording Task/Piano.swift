@@ -32,9 +32,10 @@ extension PianoKeyColor {
 }
 
 
-private let KEY_FADEOUT_IN_MS = 450
 
 struct Piano: View {
+    private static let KEY_FADEOUT_IN_MS = 450
+
     let notesForWhiteKeys: [MIDINumber]
     let audioPlayers: [MIDINumber: AVAudioPlayer]
     @State var activeKeys: Set<MIDINumber> = []
@@ -54,7 +55,7 @@ struct Piano: View {
     
     private func endNote(midiNumber: MIDINumber) {
         activeKeys.remove(midiNumber)
-        audioPlayers[midiNumber]?.setVolume(0, fadeDuration: Double(KEY_FADEOUT_IN_MS) / 1000)
+        audioPlayers[midiNumber]?.setVolume(0, fadeDuration: Double(Piano.KEY_FADEOUT_IN_MS) / 1000)
     }
     
     var body: some View {
