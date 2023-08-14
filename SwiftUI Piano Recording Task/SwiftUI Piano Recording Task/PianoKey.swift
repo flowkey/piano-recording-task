@@ -1,10 +1,3 @@
-//
-//  PianoKey.swift
-//  SwiftUI Piano Recording Task
-//
-//  Created by Chetan Agarwal on 14.08.23.
-//
-
 import SwiftUI
 
 private extension PianoKeyColor {
