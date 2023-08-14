@@ -3,7 +3,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Piano Recording Task")
+            Text("Piano Recorder")
                 .font(.largeTitle)
                 .padding()
                 .background(.regularMaterial)

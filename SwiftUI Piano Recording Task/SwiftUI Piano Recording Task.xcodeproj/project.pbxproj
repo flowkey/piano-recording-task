@@ -113,11 +113,11 @@
 			children = (
 				61FB08E02A8A89F800ED5E67 /* SwiftUI-Piano-Recording-Task-Info.plist */,
 				5C83C0352A7D3BF5002B5E41 /* SwiftUI_Piano_Recording_Task.entitlements */,
+				5C83C02F2A7D3BF4002B5E41 /* SwiftUI_Piano_Recording_TaskApp.swift */,
 				5C83C0312A7D3BF4002B5E41 /* ContentView.swift */,
 				5C83C0412A7D3D3E002B5E41 /* MusicalNote.swift */,
 				5C83C03F2A7D3CA9002B5E41 /* Piano.swift */,
 				61FB08DE2A8A648700ED5E67 /* PianoKey.swift */,
-				5C83C02F2A7D3BF4002B5E41 /* SwiftUI_Piano_Recording_TaskApp.swift */,
 				5C83C0332A7D3BF5002B5E41 /* Assets.xcassets */,
 				5C83C0432A7D4C50002B5E41 /* Sounds */,
 				5C83C0362A7D3BF5002B5E41 /* Preview Content */,
@@ -396,6 +396,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftUI-Piano-Recording-Task-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Piano Recorder";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -435,6 +436,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftUI-Piano-Recording-Task-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Piano Recorder";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
