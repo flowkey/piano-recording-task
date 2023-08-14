@@ -49,7 +49,6 @@ struct Piano: View {
             HStack(alignment: .top, spacing: 0) {
                 ForEach(notesForWhiteKeys, id: \.self) { midiNumber in
                     WhiteKey(isActive: activeKeys.contains(midiNumber))
-                        .border(Color.gray)
                         .simultaneousGesture(
                             DragGesture(minimumDistance: 0)
                                 .onChanged({ val in
@@ -119,6 +118,7 @@ struct WhiteKey: View {
     var body: some View {
         Rectangle()
             .fill(isActive ? WhiteKey.activeColor : Color.white)
+            .border(Color.gray)
             .animation(!isActive ? .fadeOutActiveKey : nil, value: isActive)
             .frame(width: WhiteKey.width, height: WhiteKey.height)
     }
