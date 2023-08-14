@@ -41,16 +41,7 @@ struct Piano: View {
     
     init(noteRange: NoteRange) {
         notesForWhiteKeys = noteRange.filter { $0.pitchClass.pianoKeyColor == .white }
-        var audioPlayers: [MIDINumber: AVAudioPlayer] = [:]
-        noteRange.forEach { midiNumber in
-            let noteName = midiNumber.pitchClass.noteName.replacing("♯", with: "#")
-            let filename = "acoustic_grand_piano-mp3-2-\(noteName)\(midiNumber.octave)"
-            
-            let url = Bundle.main.url(forResource: filename, withExtension: "mp3")!
-            let player = try! AVAudioPlayer(contentsOf: url)
-            audioPlayers[midiNumber] = player
-        }
-        self.audioPlayers = audioPlayers
+        self.audioPlayers = noteRange.createAudioPlayers()
     }
     
     private func playNote(midiNumber: MIDINumber) {
@@ -102,5 +93,21 @@ struct Piano: View {
             }
             .offset(y: -(PianoKeyColor.white.height - PianoKeyColor.black.height) / 2)
         }
+    }
+}
+
+
+private extension NoteRange {
+    func createAudioPlayers() -> [MIDINumber: AVAudioPlayer] {
+        var audioPlayers: [MIDINumber: AVAudioPlayer] = [:]
+        self.forEach { midiNumber in
+            let noteName = midiNumber.pitchClass.noteName.replacing("♯", with: "#")
+            let filename = "acoustic_grand_piano-mp3-2-\(noteName)\(midiNumber.octave)"
+            
+            let url = Bundle.main.url(forResource: filename, withExtension: "mp3")!
+            let player = try! AVAudioPlayer(contentsOf: url)
+            audioPlayers[midiNumber] = player
+        }
+        return audioPlayers
     }
 }
