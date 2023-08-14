@@ -98,11 +98,9 @@ struct Piano: View {
                                     })
                             )
                     } else {
-                        // TODO: CLEAN THIS UP
-                        // dummy
-                        BlackKey(isActive: false)
+                        Spacer()
+                            .frame(width: BlackKey.width, height: BlackKey.height)
                             .offset(x: xOffset)
-                            .hidden()
                     }
                 }
             }
