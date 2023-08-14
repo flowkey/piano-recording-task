@@ -21,11 +21,9 @@ private extension PianoKeyColor {
     }
 }
 
-
 private extension Animation {
     static let fadeOutActiveKey = Animation.easeOut(duration: 0.8)
 }
-
 
 struct PianoKey: View {
     typealias EventHandler = () -> Void
@@ -65,7 +63,6 @@ struct PianoKey: View {
             )
     }
 }
-
 
 struct PianoKey_Previews: PreviewProvider {
     static var previews: some View {
