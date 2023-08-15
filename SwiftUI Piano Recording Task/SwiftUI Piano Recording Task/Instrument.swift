@@ -3,17 +3,6 @@ import AVFoundation
 typealias MIDINumber = Int
 typealias NoteRange = CountableRange<MIDINumber>
 
-extension MIDINumber {
-    var pitchClass: MusicalNote {
-        let rawValue = self % MusicalNote.allCases.count
-        return MusicalNote(rawValue: rawValue)!
-    }
-    
-    var octave: Int {
-        return (self / MusicalNote.allCases.count) - 1
-    }
-}
-
 struct Instrument {
     private static let KEY_FADEOUT_IN_SEC: Double = 450 / 1000
 
@@ -44,6 +33,18 @@ struct Instrument {
     }
 }
 
+extension MIDINumber {
+    var pitchClass: MusicalNote {
+        let rawValue = self % MusicalNote.allCases.count
+        return MusicalNote(rawValue: rawValue)!
+    }
+}
+
+private extension MIDINumber {
+    var octave: Int {
+        return (self / MusicalNote.allCases.count) - 1
+    }
+}
 
 private extension NoteRange {
     func createAudioPlayers() -> [MIDINumber: AVAudioPlayer] {
