@@ -37,5 +37,6 @@ The codebase consists of:
 
 - a [server](server/README.md) based on [Apollo](https://www.apollographql.com/)
 - a minimal React [client](client/README.md) based on the [react-piano](https://github.com/kevinsqi/react-piano) package
+- a minimal [Swift UI client](SwiftUI%20Piano%20Recording%20Task/README.md)
 
 Basic infos and how to run instructions for both parts can be found in the according READMEs in each directory.
