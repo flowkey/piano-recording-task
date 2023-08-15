@@ -32,7 +32,7 @@ Here a very simple example of what the UI could look like:
 ## Provided Codebase
 
 The codebase consists of:
-- a minimal React [client](client) based on the [react-piano](https://github.com/kevinsqi/react-piano) package
 - a [server](server) based on [Apollo](https://www.apollographql.com/)
+- a minimal React [client](client) based on the [react-piano](https://github.com/kevinsqi/react-piano) package
 
 Basic infos and how to run instructions for both parts can be found in the according READMEs in each directory.
