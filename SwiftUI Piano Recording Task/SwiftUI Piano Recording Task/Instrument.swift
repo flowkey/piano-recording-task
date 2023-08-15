@@ -1,7 +1,7 @@
 import AVFoundation
 
-public typealias MIDINumber = Int
-public typealias NoteRange = CountableRange<MIDINumber>
+typealias MIDINumber = Int
+typealias NoteRange = CountableRange<MIDINumber>
 
 extension MIDINumber {
     var pitchClass: MusicalNote {
