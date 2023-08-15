@@ -1,20 +1,7 @@
 import SwiftUI
 import AVFoundation
 
-public typealias MIDINumber = Int
-public typealias NoteRange = CountableRange<MIDINumber>
 
-extension MIDINumber {
-    var pitchClass: MusicalNote {
-        let rawValue = self % MusicalNote.allCases.count
-        let musicalNote = MusicalNote(rawValue: rawValue)
-        return musicalNote!
-    }
-    
-    var octave: Int {
-        return (self / MusicalNote.allCases.count) - 1
-    }
-}
 
 enum PianoKeyColor {
     case black
