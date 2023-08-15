@@ -18,7 +18,7 @@ extension MIDINumber {
 struct Instrument {
     private static let KEY_FADEOUT_IN_SEC: Double = 450 / 1000
 
-    let noteRange: NoteRange
+    private let noteRange: NoteRange
     private let audioPlayers: [MIDINumber: AVAudioPlayer]
     
     init(noteRange: NoteRange) {
