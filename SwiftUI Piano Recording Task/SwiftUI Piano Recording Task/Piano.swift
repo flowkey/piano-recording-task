@@ -1,8 +1,6 @@
 import SwiftUI
 import AVFoundation
 
-
-
 enum PianoKeyColor {
     case black
     case white
@@ -21,7 +19,6 @@ extension PianoKeyColor {
 typealias NoteCallback = ((_ midiNumber: MIDINumber) -> Void)
 
 struct Piano: View {
-    
     let notesForWhiteKeys: [MIDINumber]
     @State var activeKeys: Set<MIDINumber> = []
 
@@ -83,6 +80,3 @@ struct Piano: View {
         }
     }
 }
-
-
-
