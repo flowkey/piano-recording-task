@@ -18,11 +18,14 @@ struct ContentView: View {
                 .cornerRadius(8)
                 .padding(.bottom)
 
-            Piano(noteRange: noteRange) { midiNumber in
-                instrument.playNote(midiNumber: midiNumber)
-            } onStopNote: { midiNumber in
-                instrument.stopNote(midiNumber: midiNumber)
-            }
+            Piano(
+                noteRange: noteRange,
+                onPlayNote: { midiNumber in
+                    instrument.playNote(midiNumber: midiNumber)
+                },
+                onStopNote: { midiNumber in
+                    instrument.stopNote(midiNumber: midiNumber)
+                })
         }
         .padding()
         .onAppear {
