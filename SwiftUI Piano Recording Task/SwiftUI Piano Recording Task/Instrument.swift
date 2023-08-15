@@ -36,13 +36,11 @@ struct Instrument {
     
     func stopNote(midiNumber: MIDINumber) {
         guard let player = getAudioPlayer(for: midiNumber) else { return }
-
         player.setVolume(0, fadeDuration: Instrument.KEY_FADEOUT_IN_SEC)
     }
     
     private func getAudioPlayer(for midiNumber: MIDINumber) -> AVAudioPlayer? {
         guard noteRange.contains(midiNumber) else { return nil }
-        
         return  audioPlayers[midiNumber]
     }
 }
