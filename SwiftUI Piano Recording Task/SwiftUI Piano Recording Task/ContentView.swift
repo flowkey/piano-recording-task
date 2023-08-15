@@ -5,7 +5,7 @@ struct ContentView: View {
     let instrument: Instrument
     
     init() {
-        noteRange = 48..<72
+        noteRange = 48 ..< 72
         instrument = Instrument(noteRange: noteRange)
     }
 
