@@ -15,7 +15,7 @@ extension MIDINumber {
     }
 }
 
-class Instrument {
+struct Instrument {
     private static let KEY_FADEOUT_IN_SEC: Double = 450 / 1000
 
     let noteRange: NoteRange
