@@ -1,6 +1,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    let noteRange: NoteRange
+    let instrument: Instrument
+    
+    init() {
+        noteRange = 48 ..< 72
+        instrument = Instrument(noteRange: noteRange)
+    }
+
     var body: some View {
         VStack {
             Text("Piano Recorder")
@@ -10,7 +18,14 @@ struct ContentView: View {
                 .cornerRadius(8)
                 .padding(.bottom)
 
-            Piano(noteRange: 48 ..< 72)
+            Piano(
+                noteRange: noteRange,
+                onPlayNote: { midiNumber in
+                    instrument.playNote(midiNumber: midiNumber)
+                },
+                onStopNote: { midiNumber in
+                    instrument.stopNote(midiNumber: midiNumber)
+                })
         }
         .padding()
         .onAppear {

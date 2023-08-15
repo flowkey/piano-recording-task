@@ -1,9 +1,9 @@
-public enum MusicalNote: Int, CaseIterable {
+enum MusicalNote: Int, CaseIterable {
     case c = 0, cSharp, d, dSharp, e, f, fSharp, g, gSharp, a, aSharp, b
 }
 
 extension MusicalNote: CustomStringConvertible {
-    public var noteName: String {
+    var noteName: String {
         switch self {
         case .c:        return "C"
         case .cSharp:   return "C♯"
@@ -20,7 +20,7 @@ extension MusicalNote: CustomStringConvertible {
         }
     }
 
-    public var description: String {
+    var description: String {
         return "♪" + noteName
     }
 }

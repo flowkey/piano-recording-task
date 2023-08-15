@@ -1,21 +1,6 @@
 import SwiftUI
 import AVFoundation
 
-public typealias MIDINumber = Int
-public typealias NoteRange = CountableRange<MIDINumber>
-
-private extension MIDINumber {
-    var pitchClass: MusicalNote {
-        let rawValue = self % MusicalNote.allCases.count
-        let musicalNote = MusicalNote(rawValue: rawValue)
-        return musicalNote!
-    }
-    
-    var octave: Int {
-        return (self / MusicalNote.allCases.count) - 1
-    }
-}
-
 enum PianoKeyColor {
     case black
     case white
@@ -34,10 +19,7 @@ extension PianoKeyColor {
 typealias NoteCallback = ((_ midiNumber: MIDINumber) -> Void)
 
 struct Piano: View {
-    private static let KEY_FADEOUT_IN_MS = 450
-    
     let notesForWhiteKeys: [MIDINumber]
-    let audioPlayers: [MIDINumber: AVAudioPlayer]
     @State var activeKeys: Set<MIDINumber> = []
 
     var onPlayNote: NoteCallback?
@@ -45,23 +27,17 @@ struct Piano: View {
     
     init(noteRange: NoteRange, onPlayNote: NoteCallback? = nil, onStopNote: NoteCallback? = nil) {
         notesForWhiteKeys = noteRange.filter { $0.pitchClass.pianoKeyColor == .white }
-        self.audioPlayers = noteRange.createAudioPlayers()
         self.onPlayNote = onPlayNote
         self.onStopNote = onStopNote
     }
     
     private func playNote(midiNumber: MIDINumber) {
         activeKeys.insert(midiNumber)
-        guard let player = audioPlayers[midiNumber] else { return }
-        player.volume = 1
-        player.currentTime = 0
-        player.play()
         onPlayNote?(midiNumber)
     }
     
     private func stopNote(midiNumber: MIDINumber) {
         activeKeys.remove(midiNumber)
-        audioPlayers[midiNumber]?.setVolume(0, fadeDuration: Double(Piano.KEY_FADEOUT_IN_MS) / 1000)
         onStopNote?(midiNumber)
     }
     
@@ -102,21 +78,5 @@ struct Piano: View {
             }
             .offset(y: -(PianoKeyColor.white.height - PianoKeyColor.black.height) / 2)
         }
-    }
-}
-
-
-private extension NoteRange {
-    func createAudioPlayers() -> [MIDINumber: AVAudioPlayer] {
-        var audioPlayers: [MIDINumber: AVAudioPlayer] = [:]
-        self.forEach { midiNumber in
-            let noteName = midiNumber.pitchClass.noteName.replacing("♯", with: "#")
-            let filename = "acoustic_grand_piano-mp3-2-\(noteName)\(midiNumber.octave)"
-            
-            let url = Bundle.main.url(forResource: filename, withExtension: "mp3")!
-            let player = try! AVAudioPlayer(contentsOf: url)
-            audioPlayers[midiNumber] = player
-        }
-        return audioPlayers
     }
 }
