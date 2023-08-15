@@ -27,13 +27,19 @@ struct Instrument {
     }
     
     func playNote(midiNumber: MIDINumber) {
-        guard let player = audioPlayers[midiNumber] else { return }
+        guard
+            noteRange.contains(midiNumber),
+            let player = audioPlayers[midiNumber]
+        else { return }
+        
         player.volume = 1
         player.currentTime = 0
         player.play()
     }
     
     func stopNote(midiNumber: MIDINumber) {
+        guard noteRange.contains(midiNumber) else { return }
+        
         audioPlayers[midiNumber]?.setVolume(0, fadeDuration: Instrument.KEY_FADEOUT_IN_SEC)
     }
 }
