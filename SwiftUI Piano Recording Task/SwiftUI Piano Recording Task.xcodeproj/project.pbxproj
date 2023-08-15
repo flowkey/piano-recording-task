@@ -39,6 +39,7 @@
 		5C83C0732A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-F#4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C83C05B2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-F#4.mp3 */; };
 		5CEA59732A8A7CEB00C72165 /* GraphQLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA59722A8A7CEB00C72165 /* GraphQLClient.swift */; };
 		5CEA59752A8A82B900C72165 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEA59742A8A82B900C72165 /* Queries.swift */; };
+		613C00942A8BC8DF007F4524 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C00932A8BC8DF007F4524 /* Instrument.swift */; };
 		61FB08DF2A8A648700ED5E67 /* PianoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FB08DE2A8A648700ED5E67 /* PianoKey.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		5C83C05B2A7D4C50002B5E41 /* acoustic_grand_piano-mp3-2-F#4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "acoustic_grand_piano-mp3-2-F#4.mp3"; sourceTree = "<group>"; };
 		5CEA59722A8A7CEB00C72165 /* GraphQLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLClient.swift; sourceTree = "<group>"; };
 		5CEA59742A8A82B900C72165 /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
+		613C00932A8BC8DF007F4524 /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		61FB08DE2A8A648700ED5E67 /* PianoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoKey.swift; sourceTree = "<group>"; };
 		61FB08E02A8A89F800ED5E67 /* SwiftUI-Piano-Recording-Task-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI-Piano-Recording-Task-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 				5C83C0312A7D3BF4002B5E41 /* ContentView.swift */,
 				5C83C0412A7D3D3E002B5E41 /* MusicalNote.swift */,
 				5C83C03F2A7D3CA9002B5E41 /* Piano.swift */,
+				613C00932A8BC8DF007F4524 /* Instrument.swift */,
 				61FB08DE2A8A648700ED5E67 /* PianoKey.swift */,
 				5C83C0332A7D3BF5002B5E41 /* Assets.xcassets */,
 				5C83C0432A7D4C50002B5E41 /* Sounds */,
@@ -264,6 +267,7 @@
 				61FB08DF2A8A648700ED5E67 /* PianoKey.swift in Sources */,
 				5CEA59752A8A82B900C72165 /* Queries.swift in Sources */,
 				5C83C0422A7D3D3E002B5E41 /* MusicalNote.swift in Sources */,
+				613C00942A8BC8DF007F4524 /* Instrument.swift in Sources */,
 				5C83C0322A7D3BF4002B5E41 /* ContentView.swift in Sources */,
 				5C83C0302A7D3BF4002B5E41 /* SwiftUI_Piano_Recording_TaskApp.swift in Sources */,
 				5C83C0402A7D3CA9002B5E41 /* Piano.swift in Sources */,
