@@ -6,8 +6,7 @@ typealias NoteRange = CountableRange<MIDINumber>
 extension MIDINumber {
     var pitchClass: MusicalNote {
         let rawValue = self % MusicalNote.allCases.count
-        let musicalNote = MusicalNote(rawValue: rawValue)
-        return musicalNote!
+        return MusicalNote(rawValue: rawValue)!
     }
     
     var octave: Int {
