@@ -34,8 +34,8 @@ _IMPORTANT: The above is not a design blueprint, just an example!_
 - Focus on simplicity as much as possible
 - Storing the recordings in an appropriate data structure will help you a lot
 - Use the [server](server) to store and retrieve songs
-   - Docs: [Queries](https://www.apollographql.com/docs/react/essentials/queries/)
-   - Docs: [Mutations](https://www.apollographql.com/docs/react/essentials/mutations/))
+   - Client Docs: [Queries](https://www.apollographql.com/docs/react/essentials/queries/)
+   - Client Docs: [Mutations](https://www.apollographql.com/docs/react/essentials/mutations/)
 
 
 ## Provided Codebase
