@@ -44,6 +44,7 @@ The codebase consists of:
 
 - a [server](server/README.md) based on [Apollo](https://www.apollographql.com/)
 - a minimal React [client](client/README.md) based on the [react-piano](https://github.com/kevinsqi/react-piano) package
+   - *Careful: the `react-piano` docs do link to demo code that enables recording, but that code does not fulfil the requirements of our task!*
 - a minimal [Swift UI client](SwiftUI%20Piano%20Recording%20Task/README.md)
 
 Basic info and instructions to run can be found in the respective READMEs for each of the parts.

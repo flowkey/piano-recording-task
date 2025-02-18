@@ -30,12 +30,28 @@ declare module "react-piano" {
     }
 
     export const Piano: import("react").FC<{
-        activeNotes?: number[];
-        disabled?: boolean;
-        noteRange: { first: number; last: number };
-        playNote?: NoteFunction;
-        stopNote?: NoteFunction;
         width: number;
         keyboardShortcuts: KeyboardShortcuts;
+
+        /** Determines which keys are available */
+        noteRange: { first: number; last: number };
+
+        /** Disable user input */
+        disabled?: boolean;
+
+        /** Programatically change which notes are being played (also visually) */
+        activeNotes?: number[];
+
+        /** The function called whenever a note is played (including by manipulating `activeNotes`) */
+        playNote?: NoteFunction;
+
+        /** The function called whenever a note is stopped (including by manipulating `activeNotes`) */
+        stopNote?: NoteFunction;
+
+        /** Also has prevActiveNotes: number[] as a second parameter, but it's recommended to use it */
+        onPlayNoteInput?: NoteFunction;
+
+        /** Also has prevActiveNotes: number[] as a second parameter, but it's recommended to use it */
+        onStopNoteInput?: NoteFunction;
     }>;
 }
